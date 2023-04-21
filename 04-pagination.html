@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Adding font: Inter (sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Template Component</title>
+
+    <style>
+      /*
+        SPACING SYSTEM (px)
+        2 / 4 / 8 / 12 / 16 / 24 / 32 /
+        48 / 64 / 80 / 96 / 128
+
+        FONT SIZE SYSTEM (px)
+        10 / 12 / 14 / 16 / 18 / 20 / 24 /
+        30 / 36 / 44 / 52 / 62 / 74 / 86 /
+        98
+
+        MAIN COLOR: #087f5b
+        #099268 - a tint lighter
+        GREY COLOR: #343a40
+        #495057 - footer
+        */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #343a40;
+        line-height: 1;
+
+        /* we don't set width for the .pagination, so we want the .pagination take as much space as it will require and we will center it regardless. How? Via flex and justify-content on .pagination's parent, which is body{}(see lines below) */
+        display: flex;
+        justify-content: center;
+      }
+
+      .pagination {
+        margin-top: 200px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .page-link:link,
+      .page-link:visited {
+        /* osy 3 stroka - chtoby tsifry byli v centre*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 18px;
+        text-decoration: none;
+        color: #343a40;
+
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      .page-link:hover,
+      .page-link:active,
+      .page-link.page-link--current {
+        background-color: #087f5b;
+        color: #e9ecef;
+      }
+
+      .btn {
+        background: white;
+        width: 48px;
+        height: 48px;
+        border: 1px solid #087f5b;
+        border-radius: 50%;
+
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-icon {
+        stroke: #087f5b;
+        width: 24px;
+        height: 24px;
+      }
+
+      .btn:hover {
+        background-color: #087f5b;
+      }
+
+      .btn:hover .btn-icon {
+        stroke: #e9ecef;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="pagination">
+      <button class="btn btn--left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="btn-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+
+      <a href="#" class="page-link">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link page-link--current">3</a>
+      <a href="#" class="page-link">4</a>
+      <a href="#" class="page-link">5</a>
+      <a href="#" class="page-link">6</a>
+      <span>...</span>
+      <a href="#" class="page-link">23</a>
+
+      <button class="btn btn--right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="btn-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>
